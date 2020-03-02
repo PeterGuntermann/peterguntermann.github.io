@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "My first article!"
-date:   2020-03-02 09:20:31 +0100
+title: "My first article"
+
 ---
-Hello world.
+asdf
