@@ -1,0 +1,32 @@
+// Placeholder to allow defining custom styles that override everything else.
+// (Use `_sass/minima/custom-variables.scss` to override variable defaults)
+
+$fontFolder: "../fonts/";
+
+@font-face {
+	font-family: 'FiraSans-Regular';
+	src: url('fonts/FiraSans-Regular.eot');
+	src: local('☺'), url($fontFolder + 'FiraSans-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'FiraSans-Light';
+	src: url('fonts/FiraSans-Regular.eot');
+	src: local('☺'), url($fontFolder + 'FiraSans-Light.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+    font-family: FiraSans-Light;
+}
+
+h1, h2, h3 {
+    font-family: FiraSans-Regular;
+}
+
+p {
+    font-size: 1.25rem;
+}
