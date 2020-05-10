@@ -1,18 +1,12 @@
 ---
 layout: page
-title: About
+title: About me
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+Hello there.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+My name is Peter, I have studied mathematics at Karlsruhe Institute of Technology (KIT) and work as an agile full-stack software developer.
+In addition to my technological affinity, I have a longstanding passion for making, hearing and analyzing music.
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
+In this blog, I am going to write about anything that comes to my mind. Let's see what happens.
