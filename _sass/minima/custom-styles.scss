@@ -1,32 +1,73 @@
 // Placeholder to allow defining custom styles that override everything else.
 // (Use `_sass/minima/custom-variables.scss` to override variable defaults)
 
+@import "custom-variables";
+
 $fontFolder: "../fonts/";
 
 @font-face {
-	font-family: 'FiraSans-Regular';
-	src: url('fonts/FiraSans-Regular.eot');
-	src: local('☺'), url($fontFolder + 'FiraSans-Regular.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
+    font-family: 'FiraSans-Regular';
+    src: url($fontFolder + 'FiraSans-Regular.eot');
+    src: local('☺'), url($fontFolder + 'FiraSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
-	font-family: 'FiraSans-Light';
-	src: url('fonts/FiraSans-Regular.eot');
-	src: local('☺'), url($fontFolder + 'FiraSans-Light.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
+    font-family: 'FiraSans-Light';
+    src: url($fontFolder + 'FiraSans-Regular.eot');
+    src: local('☺'), url($fontFolder + 'FiraSans-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 body {
-    font-family: FiraSans-Light;
+    font-family: FiraSans-Light, sans-serif;
+}
+
+a {
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+header.site-header {
+    background: $header-footer-background-color;
+    border-top: 5px solid $header-footer-secondary-color;
+    border-bottom: 5px solid $header-footer-primary-color;
+
+    a.site-title {
+        color:$text-color;
+        font-family: FiraSans-Regular, sans-serif;
+    }
+}
+
+footer.site-footer {
+    background: $header-footer-background-color;
+    border-top: 5px solid $header-footer-primary-color;
+    border-bottom: 5px solid $header-footer-secondary-color;
 }
 
 h1, h2, h3 {
-    font-family: FiraSans-Regular;
+    font-family: FiraSans-Regular, sans-serif;
 }
 
 p {
     font-size: 1.25rem;
+}
+
+code {
+    border: none;
+    padding: 0.25rem 0.5rem;
+}
+
+.highlight {
+    border-radius: 10px;
+
+    pre {
+        border: none;
+        border-radius: inherit;
+        font-size: 1.25rem;
+        padding: 1rem 1.5rem;
+    }
 }
