@@ -1,3 +1,5 @@
+[![Deploy to GitHub Pages](https://github.com/PeterGuntermann/peterguntermann.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/PeterGuntermann/peterguntermann.github.io/actions/workflows/deploy.yml)
+
 # Nuxt 3 Minimal Starter
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
