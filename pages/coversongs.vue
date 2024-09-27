@@ -4,11 +4,8 @@ type Coversong = {
   artist: string;
 };
 
-const songs: Coversong[] = [
-  { title: 'Titel A', artist: 'Interpret A' },
-  { title: 'Titel B', artist: 'Interpret B' },
-  { title: 'Titel C', artist: 'Interpret C' },
-];
+const songsCsv = await queryContent('/coversongs/coversongs').findOne();
+const songs: Coversong[] = songsCsv.body as unknown as Coversong[];
 </script>
 
 <template>
