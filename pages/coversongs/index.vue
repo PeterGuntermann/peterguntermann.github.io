@@ -2,6 +2,7 @@
 type Coversong = {
   title: string;
   artist: string;
+  id: string;
 };
 
 const songsCsv = await queryContent('/coversongs/coversongs').findOne();
@@ -17,6 +18,7 @@ const songs: Coversong[] = songsCsv.body as unknown as Coversong[];
         <tr>
           <th>Title</th>
           <th>Artist</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -25,7 +27,10 @@ const songs: Coversong[] = songsCsv.body as unknown as Coversong[];
             {{ song.title }}
           </td>
           <td>
-            {{ song.title }}
+            {{ song.artist }}
+          </td>
+          <td>
+            <NuxtLink :to="`/coversongs/${song.id}`"> Sheet </NuxtLink>
           </td>
         </tr>
       </tbody>
