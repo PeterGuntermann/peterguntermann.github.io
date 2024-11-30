@@ -1,6 +1,12 @@
 import { generateSongId } from './generate-song-id';
 
-it('should return stub implementation', () => {
-  const result = generateSongId('');
-  expect(result).toEqual('sample-id');
+const cases = [
+  //
+  { songTitle: 'sample', songId: 'sample-id' },
+];
+
+it.each(cases)('should transform %s into %s', ({ songTitle, songId }) => {
+  console.log(songTitle);
+  console.log(songId);
+  expect(generateSongId(songTitle)).toEqual(songId);
 });
