@@ -1,3 +1,9 @@
 export function generateSongId(songTitle) {
-  return 'sample-id';
+  return songTitle
+    .toLowerCase()
+    .replaceAll(' ', '_')
+    .replaceAll(/[!?'"(),.]/g, '')
+    .replaceAll('ä', 'ae')
+    .replaceAll('ö', 'oe')
+    .replaceAll('ü', 'ue');
 }
