@@ -1,4 +1,4 @@
-import { generateSongId } from './generate-song-id';
+import { generateSongId } from '../utils/generate-song-id';
 
 const cases = [
   { songTitle: 'Angels', songId: 'angels' },

@@ -1,4 +1,4 @@
-export function generateSongId(songTitle) {
+export function generateSongId(songTitle: string) {
   return songTitle
     .toLowerCase()
     .replaceAll(' ', '_')
