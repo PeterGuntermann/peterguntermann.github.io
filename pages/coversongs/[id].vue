@@ -9,7 +9,10 @@ console.log(sheet);
 <template>
   <NuxtLink :to="`/coversongs`"> Zurück </NuxtLink>
   <pre>
-ID: {{ route.params.id }}
+ID    : {{ route.params.id }}
+Artist: {{ sheet.artist }}
+Key   : {{ sheet.key }}
+Body  : {{ JSON.stringify(sheet.body) }} # TODO: parse and display
   </pre>
 </template>
 
