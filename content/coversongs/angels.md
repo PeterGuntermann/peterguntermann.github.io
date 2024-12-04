@@ -2,7 +2,7 @@
 title: Angels
 artist: Robbie Williams
 ---
-Strophe 1:
+## Strophe 1
 
 I sit and wait  
 Does an angel contemplate my fate  
@@ -16,7 +16,8 @@ Thoughts running through my head
 And I feel the love is dead  
 I'm loving angels instead  
 
-Refrain:  
+## Refrain  
+
 And through it all she offers me protection  
 A lot of love and affection  
 Whether I'm right or wrong  
@@ -27,7 +28,8 @@ When I come to call,
 she won't forsake me  
 I'm loving angels instead  
 
-Strophe 2:  
+## Strophe 2
+
 When I'm feeling weak  
 And my pain walks down a one way street  
 I look above  
@@ -37,6 +39,7 @@ She breathes flesh to my bones
 And when love is dead  
 I'm loving angels instead  
 
-Refrain (x2):  
+## Refrain (x2) 
+
 And through it all (...)  
 
