@@ -7,6 +7,10 @@ type Coversong = {
 
 const songsCsv = await queryContent('/coversongs/coversongs').findOne();
 const songs: Coversong[] = songsCsv.body as unknown as Coversong[];
+
+const numSongs = songs.length;
+const numSheets = songs.filter((song) => song.id).length;
+const sheetsPercent = ((numSheets / numSongs) * 100).toFixed(2);
 </script>
 
 <template>
@@ -20,7 +24,15 @@ const songs: Coversong[] = songsCsv.body as unknown as Coversong[];
         <tr class="text-left">
           <th>Title</th>
           <th>Artist</th>
-          <th></th>
+          <th>
+            Sheets
+            <span class="badge-sm badge-outline badge-primary">
+              {{ numSheets }} of {{ numSongs }}
+            </span>
+            <span class="badge-sm badge-outline badge-secondary">
+              {{ sheetsPercent }}%
+            </span>
+          </th>
         </tr>
       </thead>
       <tbody>
