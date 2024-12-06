@@ -9,13 +9,13 @@ const filter = async () => {
   console.log('filter', xxx);
 };
 
-const songs: Coversong[] = await getCoversongsByCsv();
-// const songs: Coversong[] = await getCoversongs();
+// const songs: Coversong[] = await getCoversongsByCsv();
+const songs: Coversong[] = await getCoversongs();
 
 const numSongs = songs.length;
 const numSheetsReady = songs.filter((song) => song.status === 'ready').length;
 const numSheetsDraft = songs.filter((song) => song.status === 'draft').length;
-const percent = (num: number) => ((num / numSongs) * 100).toFixed(2);
+const percent = (num: number) => ((num / numSongs) * 100).toFixed(0);
 </script>
 
 <template>
