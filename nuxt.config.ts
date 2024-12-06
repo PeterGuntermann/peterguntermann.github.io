@@ -12,4 +12,14 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
   ],
   css: ['~/assets/scss/styles.scss'],
+  content: {
+    // https://content.nuxt.com/get-started/configuration#highlight
+    highlight: {
+      theme: {
+        default: 'github-light',
+        dark: 'github-dark',
+        sepia: 'monokai',
+      },
+    },
+  },
 });
