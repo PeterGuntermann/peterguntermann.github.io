@@ -1,13 +1,16 @@
 <script setup lang="ts">
-type Coversong = {
-  title: string;
-  artist: string;
-  id: string;
-  status: 'todo' | 'draft' | 'ready';
+import { getCoversongs } from '~/composables/coversongs';
+import { Coversong } from '~/models/coversong';
+
+let xxx = await getCoversongs();
+
+const filter = async () => {
+  xxx = await getCoversongs({ title: { $contains: 'Nacht' } });
+  console.log('filter', xxx);
 };
 
-const songsCsv = await queryContent('/coversongs/coversongs').findOne();
-const songs: Coversong[] = songsCsv.body as unknown as Coversong[];
+const songs: Coversong[] = await getCoversongsByCsv();
+// const songs: Coversong[] = await getCoversongs();
 
 const numSongs = songs.length;
 const numSheetsReady = songs.filter((song) => song.status === 'ready').length;
@@ -22,7 +25,10 @@ const percent = (num: number) => ((num / numSongs) * 100).toFixed(2);
         <h2>Coversongs</h2>
       </div>
 
-      <div class="flex-1"></div>
+      <div class="flex-1">
+        <!-- Debug -->
+        <button class="btn" @click="filter()">Filter</button>
+      </div>
 
       <div class="flex-none">
         <span class="mx-1 badge badge-outline"> {{ numSongs }} songs </span>
