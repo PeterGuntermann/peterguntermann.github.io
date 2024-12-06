@@ -1,14 +1,14 @@
-title,artist,id,tags
-1000 und 1 Nacht (Zoom),Klaus Lage
-A night like this,Caro Emerald
-Aber bitte mit Sahne,Udo Jürgens
+title,artist,id,status
+1000 und 1 Nacht (Zoom),Klaus Lage,1000_und_1_nacht_zoom,ready
+A night like this,Caro Emerald,a_night_like_this,
+Aber bitte mit Sahne,Udo Jürgens,aber_bitte_mit_sahne,
 All star,Smash Mouth,all_star
 All summer long,Kid Rock
-All the small things,Blink 182,,Rock
-Angels,Robbie Williams,angels
+All the small things,Blink 182
+Angels,Robbie Williams,angels,draft
 Bed of Roses,Bon Jovi
 Blue suede shoes,Elvis
-Come together,Beatles
+Come together,The Beatles
 Dancing queen,Abba
 Don't stop believin',Journey
 Dos Bros,The Boss Hoss

@@ -3,6 +3,7 @@ type Coversong = {
   title: string;
   artist: string;
   id: string;
+  status: 'todo' | 'draft' | 'ready';
 };
 
 const songsCsv = await queryContent('/coversongs/coversongs').findOne();
@@ -25,7 +26,7 @@ const sheetsPercent = ((numSheets / numSongs) * 100).toFixed(2);
           <th>Title</th>
           <th>Artist</th>
           <th>
-            Sheets
+            Sheet
             <span class="badge-sm badge-outline badge-primary">
               {{ numSheets }} of {{ numSongs }}
             </span>
@@ -44,12 +45,20 @@ const sheetsPercent = ((numSheets / numSongs) * 100).toFixed(2);
             {{ song.artist }}
           </td>
           <td>
-            <NuxtLink
-              v-if="song.id"
-              class="btn btn-xs btn-outline"
-              :to="`/coversongs/${song.id}`"
-            >
-              Show Sheet
+            <NuxtLink v-if="song.id" :to="`/coversongs/${song.id}`">
+              <span
+                v-if="song.status === 'ready'"
+                class="btn btn-xs btn-outline btn-success"
+              >
+                Sheet Ready
+              </span>
+              <span
+                v-else-if="song.status === 'draft'"
+                class="btn btn-xs btn-outline btn-warning"
+              >
+                Sheet Draft
+              </span>
+              <span v-else class="btn btn-xs btn-outline"> Sheet Todo </span>
             </NuxtLink>
           </td>
         </tr>
