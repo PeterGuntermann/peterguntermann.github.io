@@ -10,12 +10,14 @@ const songs: Coversong[] = songsCsv.body as unknown as Coversong[];
 </script>
 
 <template>
-  <div class="container mx-auto">
-    <h2>Coversongs</h2>
+  <div class="container mx-auto px-4">
+    <nav class="navbar">
+      <h2>Coversongs</h2>
+    </nav>
 
-    <table class="w-full table-auto">
+    <table class="table table-sm table-zebra w-full table-auto">
       <thead>
-        <tr>
+        <tr class="text-left">
           <th>Title</th>
           <th>Artist</th>
           <th></th>
@@ -30,7 +32,13 @@ const songs: Coversong[] = songsCsv.body as unknown as Coversong[];
             {{ song.artist }}
           </td>
           <td>
-            <NuxtLink :to="`/coversongs/${song.id}`"> Sheet </NuxtLink>
+            <NuxtLink
+              v-if="song.id"
+              class="btn btn-xs btn-outline"
+              :to="`/coversongs/${song.id}`"
+            >
+              Show Sheet
+            </NuxtLink>
           </td>
         </tr>
       </tbody>

@@ -3,13 +3,7 @@
 </template>
 
 <script setup>
-const title = 'Die Band für deinen Hühnerstall - Chicken Dinner';
-const description =
-  'Die Band "Chicken Dinner" aus Karlsruhe spielt Coversongs in einer bunten Mischung ' +
-  'aus dem Bereich Rock, Pop und Soul. ' +
-  'Es sind Songs, die man feiert, die man kennt und die man einfach genießt. ' +
-  'Wenn du ein Fest planst, dann kann Chicken Dinner den Geschmack deines Publikums treffen ' +
-  'und für die passende Stimmung sorgen.';
+const title = 'Peter Guntermann';
 
 useHead({
   title: title,
@@ -21,11 +15,11 @@ useHead({
 });
 useSeoMeta({
   title: title,
-  ogTitle: 'Die Band für deinen Hühnerstall',
-  ogUrl: 'https://chickendinnerband.de',
-  ogDescription: description,
-  description: description,
-  ogType: 'website',
+  // ogTitle: title,
+  // ogUrl: 'https://chickendinnerband.de',
+  // ogDescription: description,
+  // description: description,
+  // ogType: 'website',
   robots: 'index, follow',
 });
 </script>
