@@ -18,9 +18,11 @@ const percent = (num: number) => ((num / numSongs) * 100).toFixed(2);
 <template>
   <div class="container mx-auto px-4 pb-4">
     <nav class="navbar">
-      <div class="flex-1">
+      <div class="flex-none">
         <h2>Coversongs</h2>
       </div>
+
+      <div class="flex-1"></div>
 
       <div class="flex-none">
         <span class="mx-1 badge badge-outline"> {{ numSongs }} songs </span>
