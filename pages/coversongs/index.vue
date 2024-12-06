@@ -14,7 +14,7 @@ const sheetsPercent = ((numSheets / numSongs) * 100).toFixed(2);
 </script>
 
 <template>
-  <div class="container mx-auto px-4">
+  <div class="container mx-auto px-4 pb-4">
     <nav class="navbar">
       <h2>Coversongs</h2>
     </nav>
