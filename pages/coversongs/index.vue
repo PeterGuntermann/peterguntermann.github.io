@@ -1,20 +1,24 @@
 <script setup lang="ts">
-import { getCoversongs } from '~/composables/coversongs';
+import DataTablesLib from 'datatables.net';
+
+import DataTable from 'datatables.net-vue3';
 import { Coversong } from '~/models/coversong';
 
-let stop1 = new Date();
-let xxx = [
-  ...(await getCoversongs()),
-  ...(await getCoversongs()),
-  ...(await getCoversongs()),
-  ...(await getCoversongs()),
-  ...(await getCoversongs()),
-];
-let stop2 = new Date();
-console.log(`Fetch dauerte ${(stop2 - stop1) / 1000}s`);
-console.log(xxx);
-let stop3 = new Date();
-console.log(`Display dauerte ${(stop3 - stop2) / 1000}s`);
+DataTable.use(DataTablesLib);
+
+// let stop1 = new Date();
+// let xxx: Coversong[] = [
+// ...(await getCoversongs()),
+// ...(await getCoversongs()),
+// ...(await getCoversongs()),
+// ...(await getCoversongs()),
+// ...(await getCoversongs()),
+// ];
+// let stop2 = new Date();
+// console.log(`Fetch dauerte ${(stop2 - stop1) / 1000}s`);
+// console.log(xxx);
+// let stop3 = new Date();
+// console.log(`Display dauerte ${(stop3 - stop2) / 1000}s`);
 
 // const filter = async () => {
 //   xxx = await getCoversongs({ title: { $contains: 'Nacht' } });
@@ -22,12 +26,25 @@ console.log(`Display dauerte ${(stop3 - stop2) / 1000}s`);
 // };
 
 const songs: Coversong[] = await getCoversongsByCsv();
-// const songs: Coversong[] = await getCoversongs();
+const loadTestSongs: Coversong[] = await getCoversongs();
+console.log('songs', loadTestSongs);
 
 const numSongs = songs.length;
 const numSheetsReady = songs.filter((song) => song.status === 'ready').length;
 const numSheetsDraft = songs.filter((song) => song.status === 'draft').length;
 const percent = (num: number) => ((num / numSongs) * 100).toFixed(0);
+
+function renderCol(data: Coversong) {
+  console.log(data);
+  const targetRoute = `/coversongs/${data.id}`;
+  const linkText =
+    data.status === 'ready'
+      ? `<span class="btn btn-xs btn-outline btn-success"> Sheet Ready </span>`
+      : data.status === 'draft'
+        ? `<span class="btn btn-xs btn-outline btn-warning"> Sheet Draft </span>`
+        : `<span class="btn btn-xs btn-outline"> Sheet Todo </span>`;
+  return `<a href="${targetRoute}"> ${linkText} </a>`;
+}
 </script>
 
 <template>
@@ -52,6 +69,23 @@ const percent = (num: number) => ((num / numSongs) * 100).toFixed(0);
         </span>
       </div>
     </nav>
+
+    <DataTable
+      :data="loadTestSongs"
+      :columns="[
+        { data: 'title', title: 'Title' },
+        { data: 'artist', title: 'Artist' },
+        {
+          data: null,
+          title: 'Sheet',
+          orderable: false,
+          render: renderCol,
+        },
+      ]"
+      class="table table-sm table-zebra w-full table-auto"
+    />
+
+    <div class="divider">↑ DataTable /// plain HTML with for-each ↓</div>
 
     <div class="overflow-y-auto">
       <table class="table table-sm table-zebra w-full table-auto">
