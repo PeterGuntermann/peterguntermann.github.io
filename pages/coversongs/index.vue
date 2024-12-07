@@ -2,15 +2,27 @@
 import { getCoversongs } from '~/composables/coversongs';
 import { Coversong } from '~/models/coversong';
 
-let xxx = await getCoversongs();
+let stop1 = new Date();
+let xxx = [
+  ...(await getCoversongs()),
+  ...(await getCoversongs()),
+  ...(await getCoversongs()),
+  ...(await getCoversongs()),
+  ...(await getCoversongs()),
+];
+let stop2 = new Date();
+console.log(`Fetch dauerte ${(stop2 - stop1) / 1000}s`);
+console.log(xxx);
+let stop3 = new Date();
+console.log(`Display dauerte ${(stop3 - stop2) / 1000}s`);
 
-const filter = async () => {
-  xxx = await getCoversongs({ title: { $contains: 'Nacht' } });
-  console.log('filter', xxx);
-};
+// const filter = async () => {
+//   xxx = await getCoversongs({ title: { $contains: 'Nacht' } });
+//   console.log('filter', xxx);
+// };
 
-// const songs: Coversong[] = await getCoversongsByCsv();
-const songs: Coversong[] = await getCoversongs();
+const songs: Coversong[] = await getCoversongsByCsv();
+// const songs: Coversong[] = await getCoversongs();
 
 const numSongs = songs.length;
 const numSheetsReady = songs.filter((song) => song.status === 'ready').length;
@@ -27,7 +39,7 @@ const percent = (num: number) => ((num / numSongs) * 100).toFixed(0);
 
       <div class="flex-1">
         <!-- Debug -->
-        <button class="btn" @click="filter()">Filter</button>
+        <!--        <button class="btn" @click="filter()">Filter</button>-->
       </div>
 
       <div class="flex-none">

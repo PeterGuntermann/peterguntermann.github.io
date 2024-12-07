@@ -10,16 +10,13 @@ export const getCoversongs = async (
       ...query,
     })
     .find();
-  console.log('parsed', parsedContent);
 
-  let songs: Coversong[] = parsedContent.map((song) => ({
-    title: `${song.title ?? ''}`,
-    artist: `${song.artist ?? ''}`,
-    status: song?.status === 'ready' ? 'ready' : 'draft',
-    id: song._path?.split('/coversongs/')[1] ?? '',
+  return parsedContent.map(({ _path, artist, status, title }) => ({
+    title: `${title ?? ''}`,
+    artist: `${artist ?? ''}`,
+    status: status === 'ready' ? 'ready' : 'draft',
+    id: _path?.split('/coversongs/')[1] ?? '',
   }));
-  console.log('mapped', songs);
-  return songs;
 };
 
 /**
