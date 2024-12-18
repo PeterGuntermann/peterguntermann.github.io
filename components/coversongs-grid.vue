@@ -1,24 +1,23 @@
 <script setup lang="ts">
 import { Coversong } from '~/models/coversong';
 import { AgGridVue } from 'ag-grid-vue3';
-import { AllCommunityModule, ModuleRegistry } from 'ag-grid-community';
+import { AllCommunityModule, ColDef, ModuleRegistry } from 'ag-grid-community';
 
 // Register all Community features
 ModuleRegistry.registerModules([AllCommunityModule]);
 
 // Row Data: The data to be displayed.
 const rowData = ref([
-  { make: 'Tesla', model: 'Model Y', price: 64950, electric: true },
-  { make: 'Ford', model: 'F-Series', price: 33850, electric: false },
-  { make: 'Toyota', model: 'Corolla', price: 29600, electric: false },
+  { title: 'Tesla', artist: 'Model Y', sheet: 64950 },
+  { title: 'Ford', artist: 'F-Series', sheet: 33850 },
+  { title: 'Toyota', artist: 'Corolla', sheet: 29600 },
 ]);
 
 // Column Definitions: Defines the columns to be displayed.
-const colDefs = ref([
-  { field: 'make' },
-  { field: 'model' },
-  { field: 'price' },
-  { field: 'electric' },
+const colDefs = ref<ColDef[]>([
+  { field: 'title' },
+  { field: 'artist' },
+  { field: 'sheet', valueFormatter: (x) => `Value: ${x.value}` },
 ]);
 
 const { coversongs } = defineProps<{
@@ -29,7 +28,7 @@ const { coversongs } = defineProps<{
 <template>
   <AgGridVue :rowData="rowData" :columnDefs="colDefs" style="height: 500px" />
 
-  <pre>
+  <pre v-if="false">
 Coversongs:
 {{ JSON.stringify(coversongs, null, 2) }}
   </pre>
