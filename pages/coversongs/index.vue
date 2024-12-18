@@ -1,14 +1,13 @@
 <script setup lang="ts">
-import { getCoversongs } from '~/composables/coversongs';
 import { Coversong } from '~/models/coversong';
 
 let stop1 = new Date();
 let xxx = [
-  ...(await getCoversongs()),
-  ...(await getCoversongs()),
-  ...(await getCoversongs()),
-  ...(await getCoversongs()),
-  ...(await getCoversongs()),
+  // ...(await getCoversongs()),
+  // ...(await getCoversongs()),
+  // ...(await getCoversongs()),
+  // ...(await getCoversongs()),
+  // ...(await getCoversongs()),
 ];
 let stop2 = new Date();
 // console.log(`Fetch dauerte ${(stop2 - stop1) / 1000}s`);
