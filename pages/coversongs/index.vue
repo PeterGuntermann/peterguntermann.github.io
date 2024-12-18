@@ -1,26 +1,6 @@
 <script setup lang="ts">
 import { getCoversongs } from '~/composables/coversongs';
 import { Coversong } from '~/models/coversong';
-import { AgGridVue } from 'ag-grid-vue3';
-import { AllCommunityModule, ModuleRegistry } from 'ag-grid-community';
-
-// Register all Community features
-ModuleRegistry.registerModules([AllCommunityModule]);
-
-// Row Data: The data to be displayed.
-const rowData = ref([
-  { make: 'Tesla', model: 'Model Y', price: 64950, electric: true },
-  { make: 'Ford', model: 'F-Series', price: 33850, electric: false },
-  { make: 'Toyota', model: 'Corolla', price: 29600, electric: false },
-]);
-
-// Column Definitions: Defines the columns to be displayed.
-const colDefs = ref([
-  { field: 'make' },
-  { field: 'model' },
-  { field: 'price' },
-  { field: 'electric' },
-]);
 
 let stop1 = new Date();
 let xxx = [
@@ -73,7 +53,7 @@ const percent = (num: number) => ((num / numSongs) * 100).toFixed(0);
       </div>
     </nav>
 
-    <AgGridVue :rowData="rowData" :columnDefs="colDefs" style="height: 500px"></AgGridVue>
+    <CoversongsGrid :coversongs="songs" />
 
     <div class="overflow-y-auto">
       <table class="table table-sm table-zebra w-full table-auto">
