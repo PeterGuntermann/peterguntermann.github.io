@@ -11,10 +11,10 @@ let xxx = [
   ...(await getCoversongs()),
 ];
 let stop2 = new Date();
-console.log(`Fetch dauerte ${(stop2 - stop1) / 1000}s`);
-console.log(xxx);
+// console.log(`Fetch dauerte ${(stop2 - stop1) / 1000}s`);
+// console.log(xxx);
 let stop3 = new Date();
-console.log(`Display dauerte ${(stop3 - stop2) / 1000}s`);
+// console.log(`Display dauerte ${(stop3 - stop2) / 1000}s`);
 
 // const filter = async () => {
 //   xxx = await getCoversongs({ title: { $contains: 'Nacht' } });
