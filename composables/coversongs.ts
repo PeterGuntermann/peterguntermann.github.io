@@ -1,9 +1,18 @@
 import { QueryBuilderWhere } from '@nuxt/content';
 import { Coversong } from '~/models/coversong';
 
-export const getCoversongs = async (
-  query: QueryBuilderWhere = {}
-): Promise<Coversong[]> => {
+export async function useCoversongs() {
+  const coversongs = useState<Coversong[]>('coversongs', () => ref([]));
+
+  await callOnce(async () => {
+    const { data } = await useAsyncData('coversongs-data', () => getCoversongs());
+    coversongs.value = data.value ?? [];
+  });
+
+  return coversongs;
+}
+
+const getCoversongs = async (query: QueryBuilderWhere = {}): Promise<Coversong[]> => {
   const parsedContent = await queryContent('/coversongs')
     .where({
       _type: { $eq: 'markdown' },
@@ -22,7 +31,7 @@ export const getCoversongs = async (
 /**
  * @deprecated
  */
-export const getCoversongsByCsv = async (): Promise<Coversong[]> => {
+const getCoversongsByCsv = async (): Promise<Coversong[]> => {
   // const s = await queryContent('/coversongs');
 
   const songsCsv = await queryContent('/coversongs/coversongs').findOne();
