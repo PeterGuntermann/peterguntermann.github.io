@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import QuickSearch from '~/components/quick-search.vue';
+
 const coversongs = await useCoversongs();
 
 const numSongs = coversongs.value.length;
@@ -15,6 +17,10 @@ const percent = (num: number) => ((num / numSongs) * 100).toFixed(0);
       </div>
 
       <div class="flex-1"></div>
+
+      <div class="flex-none">
+        <QuickSearch />
+      </div>
 
       <div class="flex-none">
         <span class="mx-1 badge badge-outline"> {{ numSongs }} songs </span>
