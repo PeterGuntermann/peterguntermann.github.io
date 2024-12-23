@@ -25,6 +25,7 @@ const colDef: ColDef = { resizable: false };
 const colDefs = ref<ColDef[]>([
   { ...colDef, flex: 1, field: 'title' },
   { ...colDef, flex: 1, field: 'artist' },
+  { ...colDef, field: 'year' },
   {
     ...colDef,
     field: 'sheet',

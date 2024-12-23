@@ -21,10 +21,11 @@ const getCoversongs = async (query: QueryBuilderWhere = {}): Promise<Coversong[]
     })
     .find();
 
-  return parsedContent.map(({ _path, artist, status, title }) => ({
+  return parsedContent.map(({ _path, artist, status, title, year }) => ({
     title: `${title ?? ''}`,
     artist: `${artist ?? ''}`,
     status: status === 'ready' ? 'ready' : 'draft',
+    year: `${year ?? ''}`,
     id: _path?.split('/coversongs/')[1] ?? '',
   }));
 };

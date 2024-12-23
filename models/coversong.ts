@@ -3,4 +3,5 @@ export type Coversong = {
   artist: string;
   id: string;
   status: 'todo' | 'draft' | 'ready';
+  year: string;
 };
