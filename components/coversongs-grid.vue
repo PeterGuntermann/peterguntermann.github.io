@@ -45,10 +45,10 @@ defineExpose({
 <template>
   <AgGridVue
     class="table"
+    style="height: calc(100vh - 5rem)"
     :rowData="coversongs"
     :columnDefs="colDefs"
     :theme="theme"
     :pagination="true"
-    style="width: 100%; height: 500px"
   />
 </template>
