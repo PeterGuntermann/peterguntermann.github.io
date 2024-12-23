@@ -16,6 +16,7 @@ const getCoversongs = async (query: QueryBuilderWhere = {}): Promise<Coversong[]
   const parsedContent = await queryContent('/coversongs')
     .where({
       _type: { $eq: 'markdown' },
+      _id: { $not: 'content:coversongs:0__TEMPLATE.md' },
       ...query,
     })
     .find();
