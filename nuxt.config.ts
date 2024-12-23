@@ -3,6 +3,9 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
   app: {},
+  build: {
+    transpile: [/ag-grid-vue3/],
+  },
   modules: [
     '@nuxt/content',
     '@nuxt/fonts',
