@@ -27,13 +27,3 @@ const getCoversongs = async (query: QueryBuilderWhere = {}): Promise<Coversong[]
     id: _path?.split('/coversongs/')[1] ?? '',
   }));
 };
-
-/**
- * @deprecated
- */
-const getCoversongsByCsv = async (): Promise<Coversong[]> => {
-  // const s = await queryContent('/coversongs');
-
-  const songsCsv = await queryContent('/coversongs/coversongs').findOne();
-  return songsCsv.body as unknown as Coversong[];
-};
