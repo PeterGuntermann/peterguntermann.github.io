@@ -27,6 +27,7 @@ const percent = (num: number) => ((num / numSongs) * 100).toFixed(0);
       </div>
     </nav>
 
+    <CoversongsGrid :coversongs="coversongs" />
     <CoversongsHtmlTable :coversongs="coversongs" />
   </div>
 </template>
