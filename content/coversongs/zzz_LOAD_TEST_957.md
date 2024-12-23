@@ -1,7 +1,0 @@
----
-title: 
-artist: 
-status: draft
----
-
-...
