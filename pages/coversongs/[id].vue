@@ -8,7 +8,7 @@
   <ContentDoc v-slot="{ doc }">
     <article class="container mx-auto px-4 prose">
       <h1>{{ doc.title }}</h1>
-      <em>by {{ doc.artist }}</em>
+      <em>{{ doc.artist }}</em>
       <ContentRenderer :value="doc" />
     </article>
   </ContentDoc>
