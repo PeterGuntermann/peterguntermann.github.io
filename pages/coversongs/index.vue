@@ -1,11 +1,8 @@
 <script setup lang="ts">
 import QuickSearch from '~/components/quick-search.vue';
 
-const coversongs = await useCoversongs();
+const { coversongs, numSongs, numSheetsReady, numSheetsDraft } = await useCoversongs();
 
-const numSongs = coversongs.value.length;
-const numSheetsReady = coversongs.value.filter((song) => song.status === 'ready').length;
-const numSheetsDraft = coversongs.value.filter((song) => song.status === 'draft').length;
 const percent = (num: number) => ((num / numSongs) * 100).toFixed(0);
 </script>
 

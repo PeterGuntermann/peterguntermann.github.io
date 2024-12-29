@@ -9,7 +9,15 @@ export async function useCoversongs() {
     coversongs.value = data.value ?? [];
   });
 
-  return coversongs;
+  const numSongs = coversongs.value.length;
+  const numSheetsReady = coversongs.value.filter(
+    (song) => song.status === 'ready'
+  ).length;
+  const numSheetsDraft = coversongs.value.filter(
+    (song) => song.status === 'draft'
+  ).length;
+
+  return { coversongs, numSongs, numSheetsReady, numSheetsDraft };
 }
 
 const getCoversongs = async (query: QueryBuilderWhere = {}): Promise<Coversong[]> => {
