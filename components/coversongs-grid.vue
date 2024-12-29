@@ -45,6 +45,12 @@ const { coversongs } = defineProps<{
   coversongs: Coversong[];
 }>();
 
+const { searchterm } = useCoversongsSearchterm();
+
+watch(searchterm, (value) => {
+  gridApi.value?.setGridOption('quickFilterText', value);
+});
+
 defineExpose({
   SheetLinkCellRenderer,
 });

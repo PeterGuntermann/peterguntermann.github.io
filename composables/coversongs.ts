@@ -1,6 +1,11 @@
 import { QueryBuilderWhere } from '@nuxt/content';
 import { Coversong } from '~/models/coversong';
 
+export function useCoversongsSearchterm() {
+  const searchterm = useState<string>('coversongs-searchterm', () => ref(''));
+  return { searchterm };
+}
+
 export async function useCoversongs() {
   const coversongs = useState<Coversong[]>('coversongs', () => ref([]));
 
