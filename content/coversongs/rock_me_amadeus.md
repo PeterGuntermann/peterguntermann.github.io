@@ -2,7 +2,7 @@
 title: Rock me Amadeus
 artist: Falco
 status: draft
-year: 
+year: 1985
 ---
 
 ...

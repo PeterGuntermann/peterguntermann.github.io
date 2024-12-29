@@ -2,7 +2,7 @@
 title: Westerland
 artist: Die Ärzte
 status: draft
-year: 
+year: 1988
 ---
 
 ...

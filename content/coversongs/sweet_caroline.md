@@ -2,7 +2,7 @@
 title: Sweet Caroline
 artist: Neil Diamond
 status: draft
-year: 
+year: 1969
 ---
 
 ...

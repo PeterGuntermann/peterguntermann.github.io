@@ -2,7 +2,7 @@
 title: Watermelon sugar
 artist: Harry Styles
 status: draft
-year: 
+year: 2020
 ---
 
 ...

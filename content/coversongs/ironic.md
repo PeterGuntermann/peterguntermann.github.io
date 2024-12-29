@@ -2,7 +2,7 @@
 title: Ironic
 artist: Alanis Morissette
 status: draft
-year: 
+year: 1996
 ---
 
 ...

@@ -2,7 +2,7 @@
 title: Je veux
 artist: Zaz
 status: draft
-year: 
+year: 2010
 ---
 
 ...

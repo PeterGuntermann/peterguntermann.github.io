@@ -2,7 +2,7 @@
 title: Supreme
 artist: Robbie Williams
 status: draft
-year: 
+year: 2000
 ---
 
 ...

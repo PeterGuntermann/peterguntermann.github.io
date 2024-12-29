@@ -2,7 +2,7 @@
 title: Sexy
 artist: Westernhagen
 status: draft
-year: 
+year: 1989
 ---
 
 ...

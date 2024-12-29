@@ -2,7 +2,7 @@
 title: Umbrella
 artist: The Baseballs / Rihanna
 status: draft
-year: 
+year: 2007
 ---
 
 ...

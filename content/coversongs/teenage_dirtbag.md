@@ -2,7 +2,7 @@
 title: Teenage dirtbag
 artist: Wheatus
 status: draft
-year: 
+year: 2000
 ---
 
 ...

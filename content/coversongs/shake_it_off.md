@@ -2,7 +2,7 @@
 title: Shake it off
 artist: Taylor Swift
 status: draft
-year: 
+year: 2014
 ---
 
 ...

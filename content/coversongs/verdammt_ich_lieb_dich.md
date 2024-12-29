@@ -1,8 +1,8 @@
 ---
-title: Verdammt ich lieb dich
+title: Verdammt, ich lieb' Dich
 artist: Matthias Reim
 status: draft
-year: 
+year: 1990
 ---
 
 ...

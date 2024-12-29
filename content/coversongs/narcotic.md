@@ -2,7 +2,7 @@
 title: Narcotic
 artist: Liquido
 status: draft
-year: 
+year: 1997
 ---
 
 ...
