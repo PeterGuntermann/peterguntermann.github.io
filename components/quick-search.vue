@@ -1,18 +1,13 @@
 <script setup lang="ts">
 const { searchterm } = useCoversongsSearchterm();
 
-function onSearchtermChange(event: any) {
-  searchterm.value = event.target.value;
-}
+const term = ref('');
+watch(term, (value) => (searchterm.value = value));
 </script>
 
 <template>
   <label class="input input-bordered flex items-center gap-2 mx-5">
-    <input
-      type="text"
-      placeholder="Quick filter ..."
-      class=""
-      @change="onSearchtermChange" />
+    <input type="text" placeholder="Quick filter ..." class="" v-model="term" />
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 16 16"
