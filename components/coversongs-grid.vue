@@ -4,10 +4,17 @@ import { AgGridVue } from 'ag-grid-vue3';
 import {
   AllCommunityModule,
   ColDef,
+  GridApi,
+  GridReadyEvent,
   ModuleRegistry,
   themeQuartz,
 } from 'ag-grid-community';
 import { SheetLinkCellRenderer } from '#components';
+
+const gridApi = shallowRef<GridApi | null>(null);
+const onGridReady = (params: GridReadyEvent) => {
+  gridApi.value = params.api;
+};
 
 const theme = themeQuartz.withParams({
   backgroundColor: 'transparent',
@@ -51,5 +58,6 @@ defineExpose({
     :columnDefs="colDefs"
     :theme="theme"
     :pagination="true"
+    @grid-ready="onGridReady"
   />
 </template>
