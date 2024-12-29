@@ -28,10 +28,10 @@ const theme = themeQuartz.withParams({
 
 ModuleRegistry.registerModules([AllCommunityModule]);
 
-const colDef: ColDef = { resizable: false };
+const colDef: ColDef = { resizable: false, flex: 1 };
 const colDefs = ref<ColDef[]>([
-  { ...colDef, flex: 1, field: 'title' },
-  { ...colDef, flex: 1, field: 'artist' },
+  { ...colDef, field: 'title', flex: 2 },
+  { ...colDef, field: 'artist', flex: 2 },
   { ...colDef, field: 'year' },
   {
     ...colDef,
@@ -58,7 +58,6 @@ defineExpose({
 
 <template>
   <AgGridVue
-    class="table"
     style="height: calc(100vh - 5rem)"
     :rowData="coversongs"
     :columnDefs="colDefs"
