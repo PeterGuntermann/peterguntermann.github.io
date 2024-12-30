@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { Coversong } from '~/models/coversong';
-import { AgGridVue } from 'ag-grid-vue3';
+import { SheetLinkCellRenderer } from '#components';
 import {
   AllCommunityModule,
   ColDef,
@@ -9,7 +8,9 @@ import {
   ModuleRegistry,
   themeQuartz,
 } from 'ag-grid-community';
-import { SheetLinkCellRenderer } from '#components';
+import { AgGridVue } from 'ag-grid-vue3';
+import { useCoversongsSearchterm } from '~/composables/coversongs';
+import { Coversong } from '~/models/coversong';
 
 const gridApi = shallowRef<GridApi | null>(null);
 const onGridReady = (params: GridReadyEvent) => {

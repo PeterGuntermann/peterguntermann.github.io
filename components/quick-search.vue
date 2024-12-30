@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useCoversongsSearchterm } from '~/composables/coversongs';
+
 const { searchterm } = useCoversongsSearchterm();
 
 const term = ref('');

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import QuickSearch from '~/components/quick-search.vue';
+import { useCoversongs } from '~/composables/coversongs';
 
 const { coversongs, numSongs, numSheetsReady, numSheetsDraft } = await useCoversongs();
 
