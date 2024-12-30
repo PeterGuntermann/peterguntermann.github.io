@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <NuxtLink class="btn btn-outline btn-info btn-sm" :to="`/coversongs`">
+  <NuxtLink class="btn btn-outline btn-info btn-sm" :to="`/songs/coversongs`">
     ← Zurück
   </NuxtLink>
 

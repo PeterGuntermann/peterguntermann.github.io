@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { useCoversongsSearchterm } from '~/composables/coversongs';
+import { useSongsSearchterm } from '~/composables/songs';
 
-const { searchterm } = useCoversongsSearchterm();
+const { searchterm } = useSongsSearchterm();
 
 const term = ref('');
 watch(term, (value) => (searchterm.value = value));

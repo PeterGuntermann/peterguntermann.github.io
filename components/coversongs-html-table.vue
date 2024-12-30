@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { Coversong } from '~/types/coversong';
+import { Song } from '~/types/songs';
 
-const { coversongs } = defineProps<{
-  coversongs: Coversong[];
+const { songs } = defineProps<{
+  songs: Song[];
 }>();
 </script>
 
@@ -17,7 +17,7 @@ const { coversongs } = defineProps<{
         </tr>
       </thead>
       <tbody>
-        <tr v-for="song of coversongs">
+        <tr v-for="song of songs">
           <td>
             {{ song.title }}
           </td>
@@ -25,7 +25,7 @@ const { coversongs } = defineProps<{
             {{ song.artist }}
           </td>
           <td>
-            <NuxtLink v-if="song.id" :to="`/coversongs/${song.id}`">
+            <NuxtLink v-if="song.id" :to="`/songs/coversongs/${song.id}`">
               <span
                 v-if="song.status === 'ready'"
                 class="btn btn-xs btn-outline btn-success"

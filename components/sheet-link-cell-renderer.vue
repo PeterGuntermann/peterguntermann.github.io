@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { ICellRendererParams } from 'ag-grid-community';
-import { Coversong } from '~/types/coversong';
+import { Song } from '~/types/songs';
 
 const { params } = defineProps<{ params: ICellRendererParams }>();
-const song: Coversong = params.data;
+const song: Song = params.data;
 </script>
 
 <template>
-  <NuxtLink v-if="song.id" :to="`/coversongs/${song.id}`">
+  <NuxtLink v-if="song.id" :to="`/songs/coversongs/${song.id}`">
     <span v-if="song.status === 'ready'" class="btn btn-xs btn-outline btn-success">
       Sheet Ready
     </span>

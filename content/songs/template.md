@@ -2,7 +2,5 @@
 title: 
 artist: 
 status: draft
-year:
+year: 
 ---
-
-...

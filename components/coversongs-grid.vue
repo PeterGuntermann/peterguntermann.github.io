@@ -9,8 +9,8 @@ import {
   themeQuartz,
 } from 'ag-grid-community';
 import { AgGridVue } from 'ag-grid-vue3';
-import { useCoversongsSearchterm } from '~/composables/coversongs';
-import { Coversong } from '~/types/coversong';
+import { useSongsSearchterm } from '~/composables/songs';
+import { Song } from '~/types/songs';
 
 const gridApi = shallowRef<GridApi | null>(null);
 const onGridReady = (params: GridReadyEvent) => {
@@ -42,11 +42,11 @@ const colDefs = ref<ColDef[]>([
   },
 ]);
 
-const { coversongs } = defineProps<{
-  coversongs: Coversong[];
+const { songs } = defineProps<{
+  songs: Song[];
 }>();
 
-const { searchterm } = useCoversongsSearchterm();
+const { searchterm } = useSongsSearchterm();
 
 watch(searchterm, (value) => {
   gridApi.value?.setGridOption('quickFilterText', value);
@@ -60,7 +60,7 @@ defineExpose({
 <template>
   <AgGridVue
     style="height: calc(100vh - 5rem)"
-    :rowData="coversongs"
+    :rowData="songs"
     :columnDefs="colDefs"
     :theme="theme"
     :pagination="true"
