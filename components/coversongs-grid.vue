@@ -10,7 +10,7 @@ import {
 } from 'ag-grid-community';
 import { AgGridVue } from 'ag-grid-vue3';
 import { useCoversongsSearchterm } from '~/composables/coversongs';
-import { Coversong } from '~/models/coversong';
+import { Coversong } from '~/types/coversong';
 
 const gridApi = shallowRef<GridApi | null>(null);
 const onGridReady = (params: GridReadyEvent) => {

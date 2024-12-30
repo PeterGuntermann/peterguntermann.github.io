@@ -1,5 +1,5 @@
 import { QueryBuilderWhere } from '@nuxt/content';
-import { Coversong } from '~/models/coversong';
+import { Coversong } from '~/types/coversong';
 
 export function useCoversongsSearchterm() {
   const searchterm = useState<string>('coversongs-searchterm', () => ref(''));

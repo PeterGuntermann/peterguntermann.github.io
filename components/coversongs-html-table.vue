@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Coversong } from '~/models/coversong';
+import { Coversong } from '~/types/coversong';
 
 const { coversongs } = defineProps<{
   coversongs: Coversong[];
