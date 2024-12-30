@@ -1,5 +1,5 @@
 import { QueryBuilderWhere } from '@nuxt/content';
-import { Song } from '~/types/songs';
+import { Song, SongParsedContent, SongStatus } from '~/types/songs';
 
 export function useSongsSearchterm() {
   const searchterm = useState<string>('songs-searchterm', () => ref(''));
@@ -33,11 +33,20 @@ const getCoversongs = async (query: QueryBuilderWhere = {}): Promise<Song[]> => 
     })
     .find();
 
-  return parsedContent.map(({ _path, artist, status, title, year }) => ({
-    title: `${title ?? ''}`,
-    artist: `${artist ?? ''}`,
-    status: status === 'ready' ? 'ready' : 'draft',
-    year: `${year ?? ''}`,
-    id: _path?.split('/songs/coversongs/')[1] ?? '',
-  }));
+  return parsedContent.map((content: SongParsedContent) => {
+    console.log(content);
+    let displayedStatus: SongStatus = content.status ?? 'placeholder';
+
+    if (['...', ''].includes(content.description ?? '')) {
+      displayedStatus = 'placeholder';
+    }
+
+    return {
+      title: `${content.title ?? ''}`,
+      artist: `${content.artist ?? ''}`,
+      status: displayedStatus,
+      year: `${content.year ?? ''}`,
+      id: content._path?.split('/songs/coversongs/')[1] ?? '',
+    };
+  });
 };

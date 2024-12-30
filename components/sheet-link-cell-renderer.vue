@@ -14,6 +14,6 @@ const song: Song = params.data;
     <span v-else-if="song.status === 'draft'" class="btn btn-xs btn-outline btn-warning">
       Sheet Draft
     </span>
-    <span v-else class="btn btn-xs btn-outline"> Sheet Todo </span>
+    <span v-else class="btn-xs"><em> No sheet </em></span>
   </NuxtLink>
 </template>

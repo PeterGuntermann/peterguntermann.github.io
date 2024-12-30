@@ -33,7 +33,7 @@ const percent = (num: number) => ((num / numSongs) * 100).toFixed(0);
 
     <CoversongsGrid :songs="coversongs" />
 
-    <CoversongsHtmlTable v-if="false" :coversongs="coversongs" />
+    <CoversongsHtmlTable v-if="false" :songs="coversongs" />
   </div>
 </template>
 
