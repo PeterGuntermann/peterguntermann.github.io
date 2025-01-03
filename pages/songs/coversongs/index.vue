@@ -11,6 +11,7 @@ const percent = (num: number) => ((num / numSongs) * 100).toFixed(0);
   <div class="container mx-auto px-4 pb-4">
     <nav class="navbar">
       <div class="flex-none">
+        <NuxtLink to="/" class="me-5"> ← Home </NuxtLink>
         <h2>Coversongs</h2>
       </div>
 
