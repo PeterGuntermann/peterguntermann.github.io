@@ -34,7 +34,6 @@ const getCoversongs = async (query: QueryBuilderWhere = {}): Promise<Song[]> => 
     .find();
 
   return parsedContent.map((content: SongParsedContent) => {
-    console.log(content);
     let displayedStatus: SongStatus = content.status ?? 'placeholder';
 
     if (['...', ''].includes(content.description ?? '')) {
