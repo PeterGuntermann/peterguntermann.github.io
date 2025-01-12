@@ -32,11 +32,6 @@ const percent = (num: number) => ((num / numSongs) * 100).toFixed(0);
       </div>
     </nav>
 
-    <!--  DEBUG  -->
-    <NuxtLink :to="`/songs/coversongs/1000_und_1_nacht_zoom`">
-      Static debug link
-    </NuxtLink>
-
     <CoversongsGrid :songs="coversongs" />
 
     <CoversongsHtmlTable v-if="false" :songs="coversongs" />

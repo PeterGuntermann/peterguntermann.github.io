@@ -58,6 +58,11 @@ defineExpose({
 </script>
 
 <template>
+  <div class="hidden">
+    <!--  Ensure details content is not tree-shaked  -->
+    <NuxtLink v-for="song of songs" :to="`/songs/coversongs/${song.id}`"></NuxtLink>
+  </div>
+
   <AgGridVue
     style="height: calc(100vh - 5rem)"
     :rowData="songs"
