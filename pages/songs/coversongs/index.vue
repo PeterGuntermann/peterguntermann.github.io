@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { useCoversongs } from '~/composables/use-coversongs';
+import CoversongsQuickSearch from '~/components/songs/coversongs-quick-search.vue';
+import CoversongsGrid from '~/components/songs/coversongs-grid.vue';
+import CoversongsHtmlTable from '~/components/songs/coversongs-html-table.vue';
 
 const { songs, numSongs, numSheetsReady, numSheetsDraft } = await useCoversongs();
 

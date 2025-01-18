@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import ACappellaGrid from '~/components/a-cappella-grid.vue';
-import ACappellaQuickSearch from '~/components/a-cappella-quick-search.vue';
+import ACappellaGrid from '~/components/songs/a-cappella-grid.vue';
+import ACappellaQuickSearch from '~/components/songs/a-cappella-quick-search.vue';
 import { useACappella } from '~/composables/use-a-cappella';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
