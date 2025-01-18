@@ -1,9 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <NuxtLink class="btn btn-outline btn-info btn-sm" :to="`/songs/a-cappella`">
-    ← Zurück
-  </NuxtLink>
+  <SongsNavigation />
 
   <ContentDoc v-slot="{ doc }">
     <div class="collapse bg-base-200">
