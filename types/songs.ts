@@ -7,13 +7,20 @@ export type SongParsedContent = {
   artist?: string;
   status?: SongStatus;
   year?: string;
+  from?: string;
+};
 
-}
-
-export type Song = {
+export type Coversong = {
   title: string;
   artist: string;
   id: string;
   status: SongStatus;
   year: string;
+};
+
+export type ACappellaSong = {
+  title: string;
+  from: string;
+  status: SongStatus;
+  id: string;
 };

@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { ICellRendererParams } from 'ag-grid-community';
-import { Song } from '~/types/songs';
+import { Coversong } from '~/types/songs';
 
 const { params } = defineProps<{ params: ICellRendererParams }>();
-const song: Song = params.data;
+const song: Coversong = params.data;
 </script>
 
 <template>

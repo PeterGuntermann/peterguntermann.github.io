@@ -47,8 +47,7 @@
           <li>
             <NuxtLink to="songs/coversongs"> Coversongs </NuxtLink>
           </li>
-          <li><NuxtLink>Sea Shanties</NuxtLink></li>
-          <li><NuxtLink>Soundtracks</NuxtLink></li>
+          <li><NuxtLink to="songs/a-cappella"> A cappella </NuxtLink></li>
         </ul>
       </div>
     </div>

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { CoversongsSheetLinkCellRenderer } from '#components';
 import {
   AllCommunityModule,
   ColDef,
@@ -9,8 +8,9 @@ import {
   themeQuartz,
 } from 'ag-grid-community';
 import { AgGridVue } from 'ag-grid-vue3';
-import { useCoversongsSearchterm } from '~/composables/use-coversongs';
-import { Coversong } from '~/types/songs';
+import { ACappellaSong } from '~/types/songs';
+import ACappellaSheetLinkCellRenderer from './a-cappella-sheet-link-cell-renderer.vue';
+import { useACappellaSearchterm } from '~/composables/use-a-cappella';
 
 const gridApi = shallowRef<GridApi | null>(null);
 const onGridReady = (params: GridReadyEvent) => {
@@ -32,35 +32,34 @@ ModuleRegistry.registerModules([AllCommunityModule]);
 const colDef: ColDef = { resizable: false, flex: 1 };
 const colDefs = ref<ColDef[]>([
   { ...colDef, field: 'title', flex: 2 },
-  { ...colDef, field: 'artist', flex: 2 },
-  { ...colDef, field: 'year' },
+  { ...colDef, field: 'from', headerName: 'Known from', flex: 2 },
   {
     ...colDef,
     field: 'sheet',
-    cellRenderer: 'CoversongsSheetLinkCellRenderer',
+    cellRenderer: 'ACappellaSheetLinkCellRenderer',
     cellRendererParams: { foo: 'bar' },
   },
 ]);
 
 const { songs } = defineProps<{
-  songs: Coversong[];
+  songs: ACappellaSong[];
 }>();
 
-const { searchterm } = useCoversongsSearchterm();
+const { searchterm } = useACappellaSearchterm();
 
 watch(searchterm, (value) => {
   gridApi.value?.setGridOption('quickFilterText', value);
 });
 
 defineExpose({
-  CoversongsSheetLinkCellRenderer,
+  ACappellaSheetLinkCellRenderer,
 });
 </script>
 
 <template>
   <div class="hidden">
     <!--  Ensure details content is not tree-shaked  -->
-    <NuxtLink v-for="song of songs" :to="`/songs/coversongs/${song.id}`"></NuxtLink>
+    <NuxtLink v-for="song of songs" :to="`/songs/a-cappella/${song.id}`"></NuxtLink>
   </div>
 
   <AgGridVue

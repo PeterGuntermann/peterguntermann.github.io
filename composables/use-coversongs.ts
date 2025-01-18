@@ -1,31 +1,27 @@
 import { QueryBuilderWhere } from '@nuxt/content';
-import { Song, SongParsedContent, SongStatus } from '~/types/songs';
+import { Coversong, SongParsedContent, SongStatus } from '~/types/songs';
 
-export function useSongsSearchterm() {
-  const searchterm = useState<string>('songs-searchterm', () => ref(''));
+export function useCoversongsSearchterm() {
+  const searchterm = useState<string>('coversongs-searchterm', () => ref(''));
   return { searchterm };
 }
 
 export async function useCoversongs() {
-  const coversongs = useState<Song[]>('coversongs', () => ref([]));
+  const songs = useState<Coversong[]>('coversongs', () => ref([]));
 
   await callOnce(async () => {
-    const { data } = await useAsyncData('coversongs-data', () => getCoversongs());
-    coversongs.value = data.value ?? [];
+    const { data } = await useAsyncData('coversongs-data', () => getSongs());
+    songs.value = data.value ?? [];
   });
 
-  const numSongs = coversongs.value.length;
-  const numSheetsReady = coversongs.value.filter(
-    (song) => song.status === 'ready'
-  ).length;
-  const numSheetsDraft = coversongs.value.filter(
-    (song) => song.status === 'draft'
-  ).length;
+  const numSongs = songs.value.length;
+  const numSheetsReady = songs.value.filter((song) => song.status === 'ready').length;
+  const numSheetsDraft = songs.value.filter((song) => song.status === 'draft').length;
 
-  return { coversongs, numSongs, numSheetsReady, numSheetsDraft };
+  return { songs, numSongs, numSheetsReady, numSheetsDraft };
 }
 
-const getCoversongs = async (query: QueryBuilderWhere = {}): Promise<Song[]> => {
+const getSongs = async (query: QueryBuilderWhere = {}): Promise<Coversong[]> => {
   const parsedContent = await queryContent('/songs/coversongs')
     .where({
       _type: { $eq: 'markdown' },

@@ -20,7 +20,7 @@ Aber bitte mit Sahne.
 
 
 Und das Ende vom Lied hat wohl jeder geahnt,  
-Der Tod hat reium sie dort abgesahnt.  
+Der Tod hat reihum sie dort abgesahnt.  
 Die Hinterbliebenen fanden vor Schmerz keine Worte,  
 Mit Sacher und Linzer und Marzipantorte  
 Hielt als letzt Liliane getreu noch zur Fahne.  

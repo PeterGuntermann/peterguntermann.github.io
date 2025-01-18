@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { Song } from '~/types/songs';
+import { Coversong } from '~/types/songs';
 
 const { songs } = defineProps<{
-  songs: Song[];
+  songs: Coversong[];
 }>();
 </script>
 

@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import QuickSearch from '~/components/quick-search.vue';
-import { useCoversongs } from '~/composables/songs';
+import { useCoversongs } from '~/composables/use-coversongs';
 
-const { coversongs, numSongs, numSheetsReady, numSheetsDraft } = await useCoversongs();
+const { songs, numSongs, numSheetsReady, numSheetsDraft } = await useCoversongs();
 
 const percent = (num: number) => ((num / numSongs) * 100).toFixed(0);
 </script>
@@ -18,7 +17,7 @@ const percent = (num: number) => ((num / numSongs) * 100).toFixed(0);
       <div class="flex-1"></div>
 
       <div class="flex-none">
-        <QuickSearch />
+        <CoversongsQuickSearch />
       </div>
 
       <div class="flex-none">
@@ -32,9 +31,9 @@ const percent = (num: number) => ((num / numSongs) * 100).toFixed(0);
       </div>
     </nav>
 
-    <CoversongsGrid :songs="coversongs" />
+    <CoversongsGrid :songs="songs" />
 
-    <CoversongsHtmlTable v-if="false" :songs="coversongs" />
+    <CoversongsHtmlTable v-if="false" :songs="songs" />
   </div>
 </template>
 
