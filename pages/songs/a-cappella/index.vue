@@ -11,7 +11,7 @@ const { songs, numSongs } = await useACappella();
     <nav class="navbar">
       <div class="flex-none">
         <NuxtLink to="/" class="me-5"> ← Home </NuxtLink>
-        <h2>Gesänge</h2>
+        <h2>A cappella</h2>
       </div>
 
       <div class="flex-1"></div>
