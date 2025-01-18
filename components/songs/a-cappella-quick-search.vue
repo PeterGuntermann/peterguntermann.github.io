@@ -1,15 +1,20 @@
 <script setup lang="ts">
-import { useACappellaSearchterm } from '~/composables/use-a-cappella';
+import { useACappella, useACappellaSearchterm } from '~/composables/use-a-cappella';
 
 const { searchterm } = useACappellaSearchterm();
+const { numSongs } = await useACappella();
 
 const term = ref('');
 watch(term, (value) => (searchterm.value = value));
 </script>
 
 <template>
-  <label class="input input-bordered flex items-center gap-2 mx-5">
-    <input type="text" placeholder="Quick filter ..." class="" v-model="term" />
+  <label class="input input-bordered flex w-96">
+    <input
+      type="text"
+      :placeholder="`Search ${numSongs} a cappella songs...`"
+      class="w-full"
+      v-model="term" />
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 16 16"

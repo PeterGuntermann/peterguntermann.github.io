@@ -1,12 +1,16 @@
 import { QueryBuilderWhere } from '@nuxt/content';
 import { ACappellaSong, SongParsedContent, SongStatus } from '~/types/songs';
+import { Ref } from 'vue';
 
 export function useACappellaSearchterm() {
   const searchterm = useState<string>('a-cappella-searchterm', () => ref(''));
   return { searchterm };
 }
 
-export async function useACappella() {
+export async function useACappella(): Promise<{
+  songs: Ref<ACappellaSong[]>;
+  numSongs: number;
+}> {
   const songs = useState<ACappellaSong[]>('a-cappella', () => ref([]));
 
   await callOnce(async () => {
