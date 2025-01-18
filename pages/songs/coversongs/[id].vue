@@ -1,21 +1,9 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import SongsDetails from '~/components/songs/songs-details.vue';
+</script>
 
 <template>
-  <SongsNavigation />
-
-  <ContentDoc v-slot="{ doc }">
-    <div class="collapse bg-base-200">
-      <input type="checkbox" />
-      <div class="collapse-title">Debug</div>
-      <div class="collapse-content">
-        <pre>{{ JSON.stringify(doc, null, 2) }}</pre>
-      </div>
-    </div>
-
-    <article class="container mx-auto px-4 prose">
-      <h1>{{ doc.title }}</h1>
-      <em>{{ doc.artist }}</em>
-      <ContentRenderer :value="doc" />
-    </article>
-  </ContentDoc>
+  <div class="container mx-auto px-4 pb-4">
+    <SongsDetails />
+  </div>
 </template>
